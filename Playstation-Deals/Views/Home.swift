@@ -70,6 +70,7 @@ struct Home: View {
                                     Text("TOP GAMES")
                                         .font(.title2)
                                         .bold()
+                                        .foregroundColor(.black)
                                     Spacer()
                                     Button {
                                         //sort
