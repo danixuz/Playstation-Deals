@@ -11,6 +11,8 @@
 		336C93F62893376400BF4CD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C93F52893376400BF4CD8 /* ContentView.swift */; };
 		336C93F82893376500BF4CD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336C93F72893376500BF4CD8 /* Assets.xcassets */; };
 		336C93FB2893376500BF4CD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336C93FA2893376500BF4CD8 /* Preview Assets.xcassets */; };
+		336C94272894029900BF4CD8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C94262894029900BF4CD8 /* Game.swift */; };
+		33D1304A2895A8C200931FBC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D130492895A8C200931FBC /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		336C93F52893376400BF4CD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		336C93F72893376500BF4CD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		336C93FA2893376500BF4CD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		336C94262894029900BF4CD8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		33D130492895A8C200931FBC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,10 @@
 		336C93F22893376400BF4CD8 /* Playstation-Deals */ = {
 			isa = PBXGroup;
 			children = (
+				33D130482895A51A00931FBC /* ViewModels */,
+				336C94252894027C00BF4CD8 /* Models */,
+				336C94242894027800BF4CD8 /* Views */,
 				336C93F32893376400BF4CD8 /* Playstation_DealsApp.swift */,
-				336C93F52893376400BF4CD8 /* ContentView.swift */,
 				336C93F72893376500BF4CD8 /* Assets.xcassets */,
 				336C93F92893376500BF4CD8 /* Preview Content */,
 			);
@@ -65,6 +71,30 @@
 				336C93FA2893376500BF4CD8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		336C94242894027800BF4CD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				336C93F52893376400BF4CD8 /* ContentView.swift */,
+				33D130492895A8C200931FBC /* Home.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		336C94252894027C00BF4CD8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				336C94262894029900BF4CD8 /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33D130482895A51A00931FBC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				336C93F62893376400BF4CD8 /* ContentView.swift in Sources */,
+				336C94272894029900BF4CD8 /* Game.swift in Sources */,
+				33D1304A2895A8C200931FBC /* Home.swift in Sources */,
 				336C93F42893376400BF4CD8 /* Playstation_DealsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+//    @State var animate3D: [Bool] = [false, false]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
+        Home()
     }
 }
 
