@@ -14,9 +14,17 @@ struct Home: View {
             ZStack{
                 LinearGradient(colors: [
                 Color("PSBlue"),
+                .cyan,
                 .cyan
                 ], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
+                VStack{
+                    Image("PSFlow")
+                        .resizable()
+                        .ignoresSafeArea()
+                        .frame(maxWidth: size.width, maxHeight: size.height / 4)
+                    Spacer() // push it up
+                }
                 VStack{
                     HStack(spacing: 50){
                         Image(systemName: "line.3.horizontal")
@@ -31,6 +39,7 @@ struct Home: View {
                     }
                     .foregroundColor(.white)
                     .padding(.top, 20)
+                    .shadow(color: Color("PSBlue"), radius: 7)
                     VStack(alignment: .leading, spacing: 5){
                         Text("Hello, Daniel Spalek")
                         Text("THE FUTURE OF GAMING")
@@ -39,20 +48,85 @@ struct Home: View {
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background{
-                        Color.red
-                    }
                     .padding()
                     Spacer()
                     RoundedRectangle(cornerRadius: 50)
                         .foregroundColor(.white)
                         .ignoresSafeArea()
+                        .shadow(color: Color("PSBlue"), radius: 15)
                         .overlay{
                             Rectangle()
                                 .foregroundColor(.white)
                                 .offset(x: 100)
                         }
     //                    .offset(y: 100)
+                        .overlay{
+                            VStack(alignment: .leading, spacing: 10){
+                                Text("Recently Popular")
+                                    .font(.caption.bold())
+                                    .foregroundColor(.gray)
+                                    .padding([.horizontal, .top], 25)
+                                HStack{
+                                    Text("TOP GAMES")
+                                        .font(.title2)
+                                        .bold()
+                                    Spacer()
+                                    Button {
+                                        //sort
+                                    } label: {
+                                        HStack{
+                                            Text("Upcoming")
+                                            Image(systemName: "chevron.down")
+                                        }
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                    } // sort
+                                    .buttonStyle(.bordered)
+                                    .offset(x: 10)
+
+                                } // top games & sort
+                                .padding(.horizontal, 25)
+                                
+                                ScrollView(.horizontal, showsIndicators: false){
+                                    HStack{
+                                        ForEach(sampleGames){ game in
+                                            ZStack(alignment: .top){
+                                                Image(game.gameImage)
+                                                    .resizable()
+                                                    .overlay(.ultraThinMaterial)
+                                                    .overlay{
+                                                        VStack(alignment: .leading){
+                                                            Spacer()
+                                                            Text(game.gameName)
+                                                                .fontWeight(.semibold)
+                                                            HStack{
+                                                                Text(game.releaseYear)
+                                                            }
+                                                                .font(.caption)
+                                                        }
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                                        .padding()
+                                                    }
+                                                    .foregroundColor(.white)
+                                                    .frame(width: size.width / 1.5, height: size.width / 1.2)
+                                                    .cornerRadius(20)
+                                                    .padding(.leading, 20)
+                                                Image(game.gameImage)
+                                                    .resizable()
+                                                    .frame(width: size.width / 1.5, height: size.width / 1.5)
+                                                    .cornerRadius(20)
+                                                    .padding(.leading, 20)
+                                            }
+                                        }
+                                    }
+                                }
+                                .padding(.top, 25)
+                                
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                            .padding(.top)
+//                            .background(.red)
+                        }
                     
                 }
                 //putting it on top of everything.
