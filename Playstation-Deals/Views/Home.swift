@@ -12,20 +12,27 @@ struct Home: View {
         GeometryReader { proxy in
             let size = proxy.size
             ZStack{
-                LinearGradient(colors: [
-                Color("PSBlue"),
-                .cyan,
-                .cyan
-                ], startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea()
-                VStack{
-                    Image("PSFlow")
-                        .resizable()
-                        .ignoresSafeArea()
-                        .frame(maxWidth: size.width, maxHeight: size.height / 4)
-                    Spacer() // push it up
+                // MARK: Background
+                Group{
+                    // MARK: Background gradient
+                    LinearGradient(colors: [
+                    Color("PSBlue"),
+                    .cyan,
+                    .cyan
+                    ], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
+                    // MARK: Flow overlay
+                    VStack{
+                        Image("PSFlow")
+                            .resizable()
+                            .ignoresSafeArea()
+                            .frame(maxWidth: size.width, maxHeight: size.height / 4)
+                        Spacer() // push it up
+                    }
                 }
+                // MARK: Content
                 VStack{
+                    // MARK: Top bar
                     HStack(spacing: 50){
                         Image(systemName: "line.3.horizontal")
                             .font(.title)
@@ -40,6 +47,7 @@ struct Home: View {
                     .foregroundColor(.white)
                     .padding(.top, 20)
                     .shadow(color: Color("PSBlue"), radius: 7)
+                    // MARK: Welcome text
                     VStack(alignment: .leading, spacing: 5){
                         Text("Hello, Daniel Spalek")
                         Text("THE FUTURE OF GAMING")
@@ -49,7 +57,9 @@ struct Home: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
+                    
                     Spacer()
+                    // MARK: Actual content is overlayed on top of a RoundedRectangle
                     RoundedRectangle(cornerRadius: 50)
                         .foregroundColor(.white)
                         .ignoresSafeArea()
@@ -60,6 +70,7 @@ struct Home: View {
                                 .offset(x: 100)
                         }
     //                    .offset(y: 100)
+                    // MARK: Page content
                         .overlay{
                             VStack(alignment: .leading, spacing: 10){
                                 Text("Recently Popular")
@@ -151,11 +162,10 @@ struct Home: View {
                     .foregroundColor(.white)
                     .frame(width: 40, height: 40)
                     .overlay{
-                        Image(systemName: "playstationlogo")
+                        Image("PSLogo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
-                            .foregroundColor(Color("PSBlue"))
                     }
                     .background{
                         Circle()
